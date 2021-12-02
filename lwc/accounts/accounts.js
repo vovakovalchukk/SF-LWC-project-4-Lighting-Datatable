@@ -73,7 +73,7 @@ export default class Accounts extends LightningElement {
         });
 
         //write changes back to original data
-        this.data = [...copyData];
+        this.accounts = [...copyData];
     }
 
     updateDraftValues(updateItem) {
