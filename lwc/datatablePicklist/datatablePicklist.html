@@ -1,0 +1,35 @@
+<template>
+    <div if:true={isPickListVisibillity} class="picklist-container">
+        <lightning-combobox
+            class="slds-popover slds-popover_edit slds-popover__body" 
+            name="picklist" 
+            label={label} 
+            value={value} 
+            placeholder={placeholder} 
+            options={options}
+            onchange={handleChange}
+            onblur={onBlur}
+            dropdown-alignment="auto">
+        </lightning-combobox>
+    </div>
+    <div if:false={isPickListVisibillity} class="picklist-just-text slds-cell-edit">
+        <div class="slds-grid slds-grid_align-spread">
+            <div class="slds-truncate">
+                <lightning-formatted-text value={value}>
+                    
+                </lightning-formatted-text>
+            </div>
+            <button if:true={iseditable}
+                class="slds-button slds-button_icon slds-cell-edit__button slds-m-left_x-small button-edit"
+                onclick={onEdit}>
+                <lightning-icon
+                    class="icon-edit"
+                    icon-name="utility:edit"
+                    size="xx-small"
+                    alternative-text="Edit">
+            </lightning-icon>
+            </button>
+        </div>
+
+    </div>
+</template>
